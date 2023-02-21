@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #343541;
+    background-color: rgb(52, 53, 65);
     color: #ffffff;
 }
 
@@ -13,6 +13,77 @@ body {
 .table-container {
     height: 100vh;
 }
+
+/* Prompt modal button START */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 12, 12, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 2;
+}
+
+.prompt-modal {
+    position: fixed;
+    width: 70%;
+    min-height: 300px;
+    max-height: 800px;
+    background-color: rgb(52, 53, 65);
+    z-index: 3;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    padding: 10px 20px 20px;
+}
+
+.prompt-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #ffffff;
+}
+
+.textarea {
+    background-color: rgb(68, 70, 84);
+    color: #ffffff;
+    min-height: 200px !important;
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.textarea:focus {
+    background-color: rgba(62, 63, 75);
+    color: #ffffff;
+}
+
+.prompt-modal-close-button {
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+}
+
+.prompt-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.btn {
+    width: 75px !important;
+}
+
+/* Prompt modal button END */
 
 /* Add prompt button START */
 
@@ -24,12 +95,16 @@ body {
 
 .add-prompt-button {
     border-radius: 50%;
-    border: 2px solid #ffffff;
-    background-color: #343541;
+    border: none;
+    background-color: rgb(68, 70, 84);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
     position: fixed;
     bottom: 50px;
+    box-shadow: 3px 3px 8px 0px rgba(37, 36, 36, 0.8);
 }
 
 /* Add prompt button END */
