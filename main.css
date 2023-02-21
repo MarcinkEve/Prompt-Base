@@ -1,3 +1,10 @@
+:root {
+    --gray-400: rgb(68, 70, 84);
+    --gray-600: rgba(62, 63, 75);
+    --gray-800: rgb(52, 53, 65);
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +12,8 @@
 }
 
 body {
-    background-color: rgb(52, 53, 65);
-    color: #ffffff;
+    background-color: var(--gray-600);
+    color: var(--white);
 }
 
 
@@ -14,7 +21,7 @@ body {
     height: 100vh;
 }
 
-/* Prompt modal button START */
+/* Prompt modal START */
 .overlay {
     position: fixed;
     top: 0;
@@ -33,7 +40,7 @@ body {
     width: 70%;
     min-height: 300px;
     max-height: 800px;
-    background-color: rgb(52, 53, 65);
+    background-color: var(--gray-800);
     z-index: 3;
     border-radius: 5px;
     overflow-y: auto;
@@ -48,12 +55,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid var(--white);
 }
 
 .textarea {
-    background-color: rgb(68, 70, 84);
-    color: #ffffff;
+    background-color: var(--gray-400);
+    color: var(--white);
     min-height: 200px !important;
     padding: 10px;
     margin: 0;
@@ -61,12 +68,12 @@ body {
 }
 
 .textarea:focus {
-    background-color: rgba(62, 63, 75);
-    color: #ffffff;
+    background-color: var(--gray-600);
+    color: var(--white);
 }
 
 .prompt-modal-close-button {
-    color: #ffffff;
+    color: var(--white);
     background-color: transparent;
     border: none;
     font-size: 24px;
@@ -83,7 +90,7 @@ body {
     width: 75px !important;
 }
 
-/* Prompt modal button END */
+/* Prompt modal END */
 
 /* Add prompt button START */
 
@@ -96,7 +103,7 @@ body {
 .add-prompt-button {
     border-radius: 50%;
     border: none;
-    background-color: rgb(68, 70, 84);
+    background-color: var(--gray-400);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,3 +115,54 @@ body {
 }
 
 /* Add prompt button END */
+
+/* Table  START */
+
+.prompt-table {
+    width: 96%;
+    border-collapse: collapse;
+    margin: 2%;
+}
+
+.prompt-table th,
+.prompt-table td {
+    border: 1px solid var(--white);
+    /* border-bottom: 1px solid var(--white); */
+    padding: 10px 20px;
+}
+
+.prompt-table th {
+
+    text-align: left;
+    /* background-color: #f2f2f2; */
+    /* font-weight: bold; */
+}
+
+.prompt-table tr:nth-child(even) {
+    /* background-color: #f9f9f9; */
+}
+
+.prompt-table tr:hover {
+    /* background-color: #ddd; */
+}
+
+.prompt-table th:nth-child(1),
+.prompt-table td:nth-child(1) {
+    width: 70%;
+}
+
+.prompt-table th:nth-child(2),
+.prompt-table td:nth-child(2) {
+    width: 30%;
+}
+
+/* .prompt-table td button {
+    padding: 5px 10px;
+   background-color: #4CAF50; 
+    color: var(--white);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+} */
+
+/* Table  END */
