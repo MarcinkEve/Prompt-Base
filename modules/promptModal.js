@@ -1,3 +1,5 @@
+import { saveTextareaData } from "./saveTextareaData.js";
+
 export const promptModal = () => {
   const container = document.getElementById("table-container");
 
@@ -36,4 +38,11 @@ export const promptModal = () => {
       document.body.style.overflow = "auto";
     });
   });
+
+  const saveInputButton = document.getElementById("save");
+  saveInputButton.addEventListener("click", () => {
+    console.log("save");
+    saveTextareaData();
+  });
+  // const textareaData = document.getElementById("save");
 };

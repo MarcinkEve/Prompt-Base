@@ -18,7 +18,4 @@ export const promptTable = () => {
     tableHeading.innerText = el;
     tableHeadRow.appendChild(tableHeading);
   });
-
-  const tableBody = document.createElement("tbody");
-  table.appendChild(tableBody);
 };
