@@ -24,6 +24,7 @@ export const creatingTableRows = () => {
       message.remove();
       promptTable();
     }
+
     //creating table rows with data and buttons
     const table = document.getElementById("prompt-table");
 
@@ -37,17 +38,16 @@ export const creatingTableRows = () => {
       tableBody.appendChild(tableRow);
 
       let tableData = document.createElement("td");
-      // tableData.className = `tableData${i}`;
       tableData.innerText = value;
       tableRow.appendChild(tableData);
 
       let tableActions = document.createElement("td");
       tableActions.className = "tableActions";
       tableActions.innerHTML = `
-  <button id=${id} class="update action-button"><i class="bi bi-pencil"></i></button>
-  <button id=${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
-  <button id=${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
-  `;
+        <button id=${id} class="update action-button"><i class="bi bi-pencil"></i></button>
+        <button id=${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
+        <button id=${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
+    `;
       //   <button id=update-${id} class="update action-button"><i class="bi bi-pencil"></i></button>
       //   <button id=delete-${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
       //   <button id=copy-${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>

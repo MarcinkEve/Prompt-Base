@@ -3,11 +3,9 @@ import { pushToLS } from "./pushToLS.js";
 
 export const savePrompt = () => {
   const promptsArray = checkingLS();
-  console.log(promptsArray);
 
   const textarea = document.querySelector(".textarea");
   const textareaValue = textarea.value;
-  console.log(textareaValue);
 
   const uniqueID = new Date().getTime();
   const prompt = { id: uniqueID, value: textareaValue };
@@ -17,7 +15,6 @@ export const savePrompt = () => {
     return;
   } else {
     // alert("Data saved succesfully");
-    console.log(prompt);
     promptsArray.push(prompt);
     pushToLS(promptsArray);
 
