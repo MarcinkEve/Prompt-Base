@@ -25,6 +25,8 @@ export const promptModal = () => {
     </div>
   `;
 
+  const focusingTextarea = document.querySelector(".textarea");
+  focusingTextarea.focus();
   // creating background overlay when modal appears
   const overlay = document.createElement("div");
   overlay.classList = "overlay";
@@ -41,20 +43,25 @@ export const promptModal = () => {
   });
 
   const saveInputButton = document.getElementById("save");
-  saveInputButton.addEventListener("click", () => {
-    console.log("save");
-    saveTextareaData();
-    let tableRows = document.querySelectorAll(".dataRow");
-    console.log(tableRows);
+  saveInputButton.addEventListener("click", (event) => {
+    if (
+      (event.type === "keydown" && event.key === 13) ||
+      event.type === "click"
+    ) {
+      console.log("save");
+      saveTextareaData();
+      let tableRows = document.querySelectorAll(".dataRow");
+      console.log(tableRows);
 
-    if (tableRows) {
-      tableRows.forEach((tableRow) => {
-        tableRow.remove();
-      });
-    } else {
-      console.log("else");
+      if (tableRows) {
+        tableRows.forEach((tableRow) => {
+          tableRow.remove();
+        });
+      } else {
+        console.log("else");
+      }
+      creatingTableRows();
     }
-    creatingTableRows();
   });
   // const textareaData = document.getElementById("save");
 };

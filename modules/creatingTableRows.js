@@ -21,8 +21,8 @@ export const creatingTableRows = () => {
     const message = document.getElementById("message");
     if (message) {
       message.remove();
+      promptTable();
     }
-    promptTable();
     //creating table rows with data and buttons
     const table = document.getElementById("prompt-table");
 
