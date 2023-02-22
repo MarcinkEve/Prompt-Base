@@ -1,5 +1,6 @@
 import { deletePrompt } from "./deletePrompt.js";
 import { promptTable } from "./promptTable.js";
+import { updatePrompt } from "./updatePrompt.js";
 
 export const creatingTableRows = () => {
   // ****************** Select from LS and render ******************
@@ -18,7 +19,6 @@ export const creatingTableRows = () => {
     message.id = "message";
     container.appendChild(message);
   } else {
-    console.log(dataFromLS);
     const message = document.getElementById("message");
     if (message) {
       message.remove();
@@ -55,11 +55,18 @@ export const creatingTableRows = () => {
     });
   }
 
+  const updateButtons = document.querySelectorAll(".update");
+  updateButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const buttonId = parseInt(button.getAttribute("id"));
+      updatePrompt(buttonId);
+    });
+  });
+
   const deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const buttonId = parseInt(button.getAttribute("id"));
-      console.log(buttonId);
       deletePrompt(buttonId);
     });
   });

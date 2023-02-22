@@ -1,3 +1,5 @@
+import { pushToLS } from "./pushToLS.js";
+
 export const deletePrompt = (buttonId) => {
   const dataFromLS = JSON.parse(localStorage.getItem("prompts"));
 
@@ -11,6 +13,6 @@ export const deletePrompt = (buttonId) => {
       deleteRow.remove();
     }
 
-    localStorage.setItem("prompts", JSON.stringify(dataFromLS));
+    pushToLS(dataFromLS);
   }
 };

@@ -1,7 +1,7 @@
 import { checkingLS } from "./checkingLS.js";
 import { pushToLS } from "./pushToLS.js";
 
-export const saveTextareaData = () => {
+export const savePrompt = () => {
   const promptsArray = checkingLS();
   console.log(promptsArray);
 

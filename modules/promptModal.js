@@ -1,5 +1,6 @@
 import { creatingTableRows } from "./creatingTableRows.js";
-import { saveTextareaData } from "./saveTextareaData.js";
+import { savePrompt } from "./savePrompt.js";
+import { updatePrompt } from "./updatePrompt.js";
 
 export const promptModal = () => {
   const container = document.getElementById("table-container");
@@ -49,19 +50,17 @@ export const promptModal = () => {
       event.type === "click"
     ) {
       console.log("save");
-      saveTextareaData();
-      let tableRows = document.querySelectorAll(".dataRow");
-      console.log(tableRows);
 
+      savePrompt();
+
+      let tableRows = document.querySelectorAll(".dataRow");
       if (tableRows) {
         tableRows.forEach((tableRow) => {
           tableRow.remove();
         });
-      } else {
-        console.log("else");
       }
+
       creatingTableRows();
     }
   });
-  // const textareaData = document.getElementById("save");
 };
