@@ -1,3 +1,4 @@
+import { deletePrompt } from "./deletePrompt.js";
 import { promptTable } from "./promptTable.js";
 
 export const creatingTableRows = () => {
@@ -43,11 +44,23 @@ export const creatingTableRows = () => {
       let tableActions = document.createElement("td");
       tableActions.className = "tableActions";
       tableActions.innerHTML = `
-  <button id=update-${id} class="update action-button"><i class="bi bi-pencil"></i></button>
-  <button id=delete-${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
-  <button id=copy-${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
+  <button id=${id} class="update action-button"><i class="bi bi-pencil"></i></button>
+  <button id=${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
+  <button id=${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
   `;
+      //   <button id=update-${id} class="update action-button"><i class="bi bi-pencil"></i></button>
+      //   <button id=delete-${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
+      //   <button id=copy-${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
       tableRow.appendChild(tableActions);
     });
   }
+
+  const deleteButtons = document.querySelectorAll(".delete");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const buttonId = parseInt(button.getAttribute("id"));
+      console.log(buttonId);
+      deletePrompt(buttonId);
+    });
+  });
 };

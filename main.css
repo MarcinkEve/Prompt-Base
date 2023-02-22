@@ -97,7 +97,7 @@ body {
 .button-container {
     display: flex;
     justify-content: flex-end;
-    padding-right: 50px;
+    padding-right: 10px;
 }
 
 .add-prompt-button {
@@ -110,7 +110,8 @@ body {
     width: 50px;
     height: 50px;
     position: fixed;
-    bottom: 50px;
+    bottom: 30px;
+    right: 30px;
     box-shadow: 3px 3px 8px 0px rgba(37, 36, 36, 0.8);
 }
 
@@ -122,11 +123,12 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin: 2% 0;
+    border: 1px solid var(--white);
 }
 
 .prompt-table th,
 .prompt-table td {
-    border: 1px solid var(--white);
+    /* border: 1px solid var(--white); */
     /* border-bottom: 1px solid var(--white); */
     padding: 10px 20px;
     display: flex;
@@ -136,12 +138,15 @@ body {
 .prompt-table tr {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid var(--white);
+
 }
 
 .prompt-table th {
     text-align: left;
     /* background-color: #f2f2f2; */
     /* font-weight: bold; */
+
 }
 
 .prompt-table tr:nth-child(even) {
@@ -155,6 +160,8 @@ body {
 .prompt-table th:nth-child(1),
 .prompt-table td:nth-child(1) {
     width: 70%;
+    border-right: 1px solid var(--white);
+
 }
 
 .prompt-table th:nth-child(2),
@@ -162,20 +169,11 @@ body {
     width: 30%;
 }
 
-/* .prompt-table td button {
-    padding: 5px 10px;
-   background-color: #4CAF50; 
-    color: var(--white);
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-} */
-
 .tableActions {
     width: 30%;
     display: flex;
     justify-content: center;
-    border: 1px solid var(--white);
+    /* border: 1px solid var(--white); */
 }
 
 .action-button {
