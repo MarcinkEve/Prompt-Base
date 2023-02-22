@@ -1,0 +1,53 @@
+import { promptTable } from "./promptTable.js";
+
+export const creatingTableRows = () => {
+  // ****************** Select from LS and render ******************
+  const dataFromLS = JSON.parse(localStorage.getItem("prompts"));
+  if (dataFromLS === null) {
+    // alert("No data found...");
+    const table = document.getElementById("prompt-table");
+    if (table) {
+      table.remove();
+    }
+
+    const container = document.getElementById("table-container");
+
+    const message = document.createElement("h5");
+    message.innerText = "No data found...";
+    message.id = "message";
+    container.appendChild(message);
+  } else {
+    console.log(dataFromLS);
+    const message = document.getElementById("message");
+    if (message) {
+      message.remove();
+    }
+    promptTable();
+    //creating table rows with data and buttons
+    const table = document.getElementById("prompt-table");
+
+    const tableBody = document.createElement("tbody");
+    table.appendChild(tableBody);
+
+    dataFromLS.map(({ id, value }) => {
+      let tableRow = document.createElement("tr");
+      tableRow.id = `dataRow-${id}`;
+      tableRow.className = "dataRow";
+      tableBody.appendChild(tableRow);
+
+      let tableData = document.createElement("td");
+      // tableData.className = `tableData${i}`;
+      tableData.innerText = value;
+      tableRow.appendChild(tableData);
+
+      let tableActions = document.createElement("td");
+      tableActions.className = "tableActions";
+      tableActions.innerHTML = `
+  <button id=update-${id} class="update action-button"><i class="bi bi-pencil"></i></button>
+  <button id=delete-${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
+  <button id=copy-${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
+  `;
+      tableRow.appendChild(tableActions);
+    });
+  }
+};

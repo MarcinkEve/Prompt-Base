@@ -1,3 +1,4 @@
+import { creatingTableRows } from "./creatingTableRows.js";
 import { saveTextareaData } from "./saveTextareaData.js";
 
 export const promptModal = () => {
@@ -43,6 +44,17 @@ export const promptModal = () => {
   saveInputButton.addEventListener("click", () => {
     console.log("save");
     saveTextareaData();
+    let tableRows = document.querySelectorAll(".dataRow");
+    console.log(tableRows);
+
+    if (tableRows) {
+      tableRows.forEach((tableRow) => {
+        tableRow.remove();
+      });
+    } else {
+      console.log("else");
+    }
+    creatingTableRows();
   });
   // const textareaData = document.getElementById("save");
 };
