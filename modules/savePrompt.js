@@ -12,11 +12,9 @@ export const savePrompt = () => {
   const prompt = { id: uniqueID, value: textareaValue };
 
   if (textareaValue.trim().length === 0) {
-    // alert("No data entered");
     infoModal("No data entered!", "danger");
     return;
   } else {
-    // alert("Data saved succesfully");
     promptsArray.push(prompt);
     pushToLS(promptsArray);
     infoModal("Prompt saved succesfully!", "success");
