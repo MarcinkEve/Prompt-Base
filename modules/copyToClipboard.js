@@ -1,9 +1,10 @@
+import { infoModal } from "./infoModal.js";
+
 export const copyToClipboard = async (copyText) => {
   try {
     await navigator.clipboard.writeText(copyText.innerText);
-    alert("Text copied to clipboard succesfully!");
-    console.log("Text copied to clipboard succesfully!");
+    infoModal("Text copied to clipboard succesfully!", "success");
   } catch (err) {
-    console.error("Failed to copy text: ", err);
+    infoModal(`Failed to copy text: ${err}`, "danger");
   }
 };
