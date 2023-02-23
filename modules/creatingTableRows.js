@@ -50,9 +50,6 @@ export const creatingTableRows = () => {
         <button id=${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
         <button id=${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
     `;
-      //   <button id=update-${id} class="update action-button"><i class="bi bi-pencil"></i></button>
-      //   <button id=delete-${id} class="delete action-button"><i class="bi bi-trash3"></i></button>
-      //   <button id=copy-${id} class="copy action-button"><i class="bi bi-clipboard"></i></button>
       tableRow.appendChild(tableActions);
     });
   }
@@ -61,6 +58,7 @@ export const creatingTableRows = () => {
   updateButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const buttonId = parseInt(button.getAttribute("id"));
+
       updatePrompt(buttonId);
     });
   });
@@ -69,6 +67,7 @@ export const creatingTableRows = () => {
   deleteButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const buttonId = parseInt(button.getAttribute("id"));
+
       deletePrompt(buttonId);
     });
   });
@@ -77,9 +76,7 @@ export const creatingTableRows = () => {
   copyButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const buttonId = button.getAttribute("id");
-      console.log(buttonId);
       const promptField = document.querySelector(`[data-id="${buttonId}"]`);
-      console.log(promptField);
 
       copyToClipboard(promptField);
     });
