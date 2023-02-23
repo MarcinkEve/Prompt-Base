@@ -1,3 +1,4 @@
+import { infoModal } from "./infoModal.js";
 import { pushToLS } from "./pushToLS.js";
 
 export const deletePrompt = (buttonId) => {
@@ -14,5 +15,6 @@ export const deletePrompt = (buttonId) => {
     }
 
     pushToLS(dataFromLS);
+    infoModal("Prompt deleted successfully!", "success");
   }
 };
