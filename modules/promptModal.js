@@ -1,6 +1,5 @@
 import { creatingTableRows } from "./creatingTableRows.js";
 import { savePrompt } from "./savePrompt.js";
-import { updatePrompt } from "./updatePrompt.js";
 
 export const promptModal = () => {
   const container = document.getElementById("table-container");
@@ -49,8 +48,6 @@ export const promptModal = () => {
       (event.type === "keydown" && event.key === 13) ||
       event.type === "click"
     ) {
-      console.log("save");
-
       savePrompt();
 
       let tableRows = document.querySelectorAll(".dataRow");
