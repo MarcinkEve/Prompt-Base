@@ -59,7 +59,7 @@ export const updatePrompt = (buttonId) => {
         pushToLS(dataFromLS);
         creatingTableRows();
 
-        infoModal("Prompt updated succesfully!", "success");
+        infoModal("Prompt updated successfully!", "success");
 
         setTimeout(() => {
           const modal = document.getElementById("prompt-modal");
