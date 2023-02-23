@@ -1,3 +1,4 @@
+import { copyToClipboard } from "./copyToClipboard.js";
 import { deletePrompt } from "./deletePrompt.js";
 import { promptTable } from "./promptTable.js";
 import { updatePrompt } from "./updatePrompt.js";
@@ -38,6 +39,7 @@ export const creatingTableRows = () => {
       tableBody.appendChild(tableRow);
 
       let tableData = document.createElement("td");
+      tableData.setAttribute("data-id", id);
       tableData.innerText = value;
       tableRow.appendChild(tableData);
 
@@ -68,6 +70,18 @@ export const creatingTableRows = () => {
     button.addEventListener("click", () => {
       const buttonId = parseInt(button.getAttribute("id"));
       deletePrompt(buttonId);
+    });
+  });
+
+  const copyButtons = document.querySelectorAll(".copy");
+  copyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const buttonId = button.getAttribute("id");
+      console.log(buttonId);
+      const promptField = document.querySelector(`[data-id="${buttonId}"]`);
+      console.log(promptField);
+
+      copyToClipboard(promptField);
     });
   });
 };
