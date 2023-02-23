@@ -1,4 +1,5 @@
 import { creatingTableRows } from "./creatingTableRows.js";
+import { infoModal } from "./infoModal.js";
 import { promptModal } from "./promptModal.js";
 import { pushToLS } from "./pushToLS.js";
 
@@ -36,7 +37,7 @@ export const updatePrompt = (buttonId) => {
       const updatedTextareaValue = textarea.value;
 
       if (updatedTextareaValue.trim().length === 0) {
-        alert("No data added!");
+        infoModal("No data added!", "danger");
         return;
       }
 
@@ -58,10 +59,14 @@ export const updatePrompt = (buttonId) => {
         pushToLS(dataFromLS);
         creatingTableRows();
 
-        const modal = document.getElementById("prompt-modal");
-        const selectOverlay = document.querySelector(".overlay");
-        modal.remove();
-        selectOverlay.remove();
+        infoModal("Prompt updated succesfully!", "success");
+
+        setTimeout(() => {
+          const modal = document.getElementById("prompt-modal");
+          const selectOverlay = document.querySelector(".overlay");
+          modal.remove();
+          selectOverlay.remove();
+        }, 1500);
       }
     }
   });
