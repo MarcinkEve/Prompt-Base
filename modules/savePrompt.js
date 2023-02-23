@@ -17,7 +17,7 @@ export const savePrompt = () => {
   } else {
     promptsArray.push(prompt);
     pushToLS(promptsArray);
-    infoModal("Prompt saved succesfully!", "success");
+    infoModal("Prompt saved successfully!", "success");
 
     setTimeout(() => {
       const modal = document.getElementById("prompt-modal");
