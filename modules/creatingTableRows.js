@@ -32,7 +32,7 @@ export const creatingTableRows = () => {
     const tableBody = document.createElement("tbody");
     table.appendChild(tableBody);
 
-    dataFromLS.map(({ id, value }) => {
+    dataFromLS.forEach(({ id, value }) => {
       let tableRow = document.createElement("tr");
       tableRow.id = `dataRow-${id}`;
       tableRow.className = "dataRow";

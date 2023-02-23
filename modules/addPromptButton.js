@@ -6,4 +6,3 @@ export const addPromptButton = () => {
     promptModal(event);
   });
 };
-addPromptButton();
