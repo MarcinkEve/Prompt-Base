@@ -1,4 +1,5 @@
 import { checkingLS } from "./checkingLS.js";
+import { infoModal } from "./infoModal.js";
 import { pushToLS } from "./pushToLS.js";
 
 export const savePrompt = () => {
@@ -11,16 +12,20 @@ export const savePrompt = () => {
   const prompt = { id: uniqueID, value: textareaValue };
 
   if (textareaValue.trim().length === 0) {
-    alert("No data entered");
+    // alert("No data entered");
+    infoModal("No data entered!", "danger");
     return;
   } else {
     // alert("Data saved succesfully");
     promptsArray.push(prompt);
     pushToLS(promptsArray);
+    infoModal("Prompt saved succesfully!", "success");
 
-    const modal = document.getElementById("prompt-modal");
-    const selectOverlay = document.querySelector(".overlay");
-    modal.remove();
-    selectOverlay.remove();
+    setTimeout(() => {
+      const modal = document.getElementById("prompt-modal");
+      const selectOverlay = document.querySelector(".overlay");
+      modal.remove();
+      selectOverlay.remove();
+    }, 1500);
   }
 };
